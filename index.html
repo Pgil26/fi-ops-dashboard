@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floral Image Ops &middot; Executive Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--ink:#0f1f33;--muted:#5b6b80;--line:#e3e8ef;--blue:#1f5fbf;--blue2:#e8f0fc;--green:#1f9d6b;--green2:#e6f6ef;--teal:#0f8a95;--teal2:#e3f4f5;--amber:#c27a0e;--amber2:#fdf3e2;--red:#c2413b;--red2:#fcebea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(120deg,#0f2f5c 0%,#1f5fbf 60%,#1f9d6b 140%);color:#fff;padding:28px 0 76px}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-weight:600}
+h1{margin:4px 0 0;font-size:30px;font-weight:800;letter-spacing:-.02em}
+.asof{text-align:right}
+.asof .d{font-size:22px;font-weight:700}
+.asof .u{font-size:12.5px;opacity:.8}
+.badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 10px;font-size:12px;margin-top:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:-52px}
+.kpi{background:var(--card);border-radius:14px;padding:16px 16px 14px;box-shadow:0 1px 2px rgba(15,31,51,.06),0 6px 20px rgba(15,31,51,.06);border-top:4px solid var(--blue)}
+.kpi.green{border-color:var(--green)}.kpi.teal{border-color:var(--teal)}.kpi.amber{border-color:var(--amber)}.kpi.red{border-color:var(--red)}
+.kl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.kv{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px;white-space:nowrap}
+.ks{font-size:12.5px;color:var(--muted)}
+.ks .bar{margin-top:8px}
+section{margin-top:28px}
+h2{font-size:19px;margin:0 0 12px;font-weight:700;display:flex;align-items:center;gap:10px}
+h2 .dot{width:10px;height:10px;border-radius:3px;background:var(--blue)}
+h2 .dot.g{background:var(--green)}h2 .dot.t{background:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
+.grid>*,.card{min-width:0}
+.card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(15,31,51,.05);border:1px solid var(--line)}
+.card h3{margin:0 0 4px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+.card h3 .big{font-size:20px;font-weight:800;color:var(--blue)}
+.card .note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#f8fafc}
+tfoot td{font-weight:700;border-bottom:none;border-top:2px solid var(--ink)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sub{font-size:12px;color:var(--muted)}
+.bar{height:8px;background:var(--blue2);border-radius:99px;overflow:hidden;min-width:60px}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--green));border-radius:99px}
+.bar.slim{height:6px}
+.pc{display:flex;align-items:center;gap:8px;min-width:120px}.pc .bar{flex:1}.pc b{font-weight:600;font-size:13px;width:38px;text-align:right}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-weight:700;font-size:12.5px}
+.pill.warn{background:var(--amber2);color:var(--amber)}
+.callout{display:flex;gap:10px;align-items:flex-start;background:var(--amber2);border:1px solid #f3dcb3;color:#7a4c06;border-radius:10px;padding:10px 14px;font-size:13.5px;margin-top:12px}
+.mtd{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.mtd .v{font-size:26px;font-weight:800}
+.mtd .bar{height:10px;width:260px;max-width:100%}
+.ast{color:var(--amber);font-weight:700;cursor:help}
+ul.notes{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+footer{margin:36px 0 0;padding:22px 0 40px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+footer p{margin:4px 0}
+footer a{color:var(--blue)}
+@media (max-width:640px){h1{font-size:24px}.asof{text-align:left}.kv{font-size:24px}.grid{grid-template-columns:minmax(0,1fr)}.mtd .bar{width:100%}.mtd>div{flex:1 1 100%}.kpis{grid-template-columns:repeat(2,1fr)}td,th{padding:7px 8px}}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+  <div><div class="brand">Executive Scorecard</div><h1>Floral Image Ops</h1><div class="badge">Calendar day Oct 8, 2026, Eastern time</div></div>
+  <div class="asof"><div class="u">As of</div><div class="d">Oct 8, 2026</div><div class="u">Last updated Oct 10, 2026, 7:35 AM ET</div></div>
+</div></header>
+<main class="wrap">
+<div class="kpis"><div class="kpi green"><div class="kl">Closed Won</div><div class="kv">11</div><div class="ks">units, product start Oct 8</div></div><div class="kpi blue"><div class="kl">Trials</div><div class="kv">17</div><div class="ks">new Trial leads</div></div><div class="kpi amber"><div class="kl">Collect / Cancel</div><div class="kv">4</div><div class="ks">moved from Closed Won</div></div><div class="kpi red"><div class="kl">Closed Lost</div><div class="kv">4</div><div class="ks">accounts lost</div></div><div class="kpi teal"><div class="kl">RouteMap</div><div class="kv">192/285</div><div class="ks">67% done &middot; 11 locations &middot; 25 pending<div class="bar "><span style="width:67%"></span></div></div></div><div class="kpi blue"><div class="kl">Geotab</div><div class="kv">9 vehicles</div><div class="ks">172 trips &middot; 630.8 miles</div></div><div class="kpi green"><div class="kl">Units on Hire</div><div class="kv">7,978</div><div class="ks">across 21 locations</div></div></div>
+
+<section><h2><span class="dot"></span>Salesforce</h2>
+<div class="grid">
+  <div class="card"><h3>Closed Won <span class="big">11</span></h3><div class="sub">Product start Oct 8, stage Closed Won (units)</div><div class="tw"><table><thead><tr><th class="">Location</th><th class="num">Units</th></tr></thead><tbody><tr><td class="">Fort Lauderdale FI</td><td class="num">6</td></tr><tr><td class="">Atlanta FI</td><td class="num">4</td></tr><tr><td class="">Dallas FI</td><td class="num">1</td></tr><tr><td class="">All other locations</td><td class="num">0</td></tr></tbody><tfoot><tr><td class="">Total</td><td class="num">11</td></tr></tfoot></table></div><p class="note">The 7 AM-to-7 AM digest showed 12, including 1 more Fort Lauderdale unit starting Oct 9.</p></div>
+  <div class="card"><h3>Trials <span class="big">17</span></h3><div class="sub">New leads created as Trial</div><div class="tw"><table><thead><tr><th class="">Location</th><th class="num">New Trials</th></tr></thead><tbody><tr><td class="">Atlanta FI</td><td class="num">8</td></tr><tr><td class="">New York FI</td><td class="num">8</td></tr><tr><td class="">Sao Paulo FI</td><td class="num">1</td></tr></tbody><tfoot><tr><td class="">Total</td><td class="num">17</td></tr></tfoot></table></div>
+    <p class="note"><b>Pending:</b> 0 &mdash; 3 Atlanta leads moved out of Pending 2/3 to Unqualified.<br><b>Closed No:</b> 0</p></div>
+  <div class="card"><h3>Cancel / Collect <span class="big" style="color:var(--amber)">4</span></h3><div class="sub">Closed Won to Collect/Cancel</div><div class="tw"><table><thead><tr><th class="">Location</th><th class="num">Count</th><th class="">Accounts</th></tr></thead><tbody><tr><td class="">Dallas FI</td><td class="num">3</td><td class="">James M Watson DDS, PA; Tupinamba; Amdocs, Inc<div class="sub">All within about 1 minute, ~11:06 AM ET</div></td></tr><tr><td class="">San Antonio FI</td><td class="num">1</td><td class="">Marcos Medical Care-</td></tr></tbody><tfoot><tr><td class="">Total</td><td class="num">4</td><td class=""></td></tr></tfoot></table></div></div>
+  <div class="card"><h3>Closed Lost <span class="big" style="color:var(--red)">4</span></h3><div class="sub">Status moved to Closed Lost</div><div class="tw"><table><thead><tr><th class="">Location</th><th class="num">Count</th><th class="">From</th><th class="">Accounts</th></tr></thead><tbody><tr><td class="">Phoenix FI</td><td class="num">2</td><td class="">Collect/Cancel</td><td class="">Anantuni Family Dental; Kokopelli</td></tr><tr><td class="">Fort Lauderdale FI</td><td class="num">1</td><td class="">Collect/Cancel</td><td class="">Global Wealth Manag...</td></tr><tr><td class="">San Antonio FI</td><td class="num">1</td><td class="">Closed Won</td><td class="">That Salon</td></tr></tbody><tfoot><tr><td class="">Total</td><td class="num">4</td><td class=""></td><td class=""></td></tr></tfoot></table></div></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>Units on Hire <span class="big" style="color:var(--green)">7,978</span></h3><div class="sub">Active products on Closed Won across 21 locations (point in time)</div>
+  <div class="grid" style="margin-top:4px"><div><div class="tw"><table><thead><tr><th class="">Top locations</th><th class="num">Units</th><th class=""></th></tr></thead><tbody><tr><td class="">Toronto FI</td><td class="num">1,135</td><td class=""><div class="bar slim"><span style="width:100%"></span></div></td></tr><tr><td class="">Puget Sound FI</td><td class="num">627</td><td class=""><div class="bar slim"><span style="width:55%"></span></div></td></tr><tr><td class="">Atlanta FI</td><td class="num">497</td><td class=""><div class="bar slim"><span style="width:44%"></span></div></td></tr><tr><td class="">Orange County FI</td><td class="num">462</td><td class=""><div class="bar slim"><span style="width:41%"></span></div></td></tr><tr><td class="">San Francisco FI</td><td class="num">462</td><td class=""><div class="bar slim"><span style="width:41%"></span></div></td></tr></tbody></table></div></div><div><div class="tw"><table><thead><tr><th class="">Smallest locations</th><th class="num">Units</th><th class=""></th></tr></thead><tbody><tr><td class="">Tampa FI</td><td class="num">121</td><td class=""><div class="bar slim"><span style="width:11%"></span></div></td></tr><tr><td class="">San Antonio FI</td><td class="num">150</td><td class=""><div class="bar slim"><span style="width:13%"></span></div></td></tr></tbody></table></div></div></div><p class="note">Active products on Closed Won, point in time. Taken from the Oct 8 Salesforce bot digest, not re-pulled live.</p></div>
+</section>
+
+<section><h2><span class="dot t"></span>RouteMap Refresh</h2>
+<div class="card">
+  <div class="mtd">
+    <div><div class="kl">Oct 8</div><div class="v">192/285 <span style="font-size:16px;color:var(--muted)">(67%)</span></div><div class="bar "><span style="width:67%"></span></div></div>
+    <div><div class="kl">Month to date</div><div class="v">1,089/1,762 <span style="font-size:16px;color:var(--muted)">(62%)</span></div><div class="bar "><span style="width:62%"></span></div></div>
+    <div><div class="kl">Pending</div><div class="v">25</div><div class="sub">across all locations</div></div>
+  </div>
+  <div class="callout">&#9888; <span><b>Watch:</b> Dallas has 15 pending, the most of any location.</span></div>
+  <h3 style="margin-top:18px">Oct 8 activity by location</h3><div class="tw"><table><thead><tr><th class="">Location</th><th class="num">Oct 8 done/total</th><th class="">Oct 8 %</th><th class="num">Pending</th><th class="num">Month to date</th><th class="num">MTD %</th></tr></thead><tbody><tr><td class="">Chicago</td><td class="num">36/52</td><td class=""><div class="pc"><div class="bar slim"><span style="width:69%"></span></div><b>69%</b></div></td><td class="num">0</td><td class="num">100/155</td><td class="num">65%</td></tr><tr><td class="">Fort Worth</td><td class="num">26/35</td><td class=""><div class="pc"><div class="bar slim"><span style="width:74%"></span></div><b>74%</b></div></td><td class="num">0</td><td class="num">96/152</td><td class="num">63%</td></tr><tr><td class="">Denver</td><td class="num">26/40</td><td class=""><div class="pc"><div class="bar slim"><span style="width:65%"></span></div><b>65%</b></div></td><td class="num">0</td><td class="num">137/216</td><td class="num">63%</td></tr><tr><td class="">New York</td><td class="num">24/32</td><td class=""><div class="pc"><div class="bar slim"><span style="width:75%"></span></div><b>75%</b></div></td><td class="num">0</td><td class="num">58/131</td><td class="num">44%</td></tr><tr><td class="">Phoenix</td><td class="num">19/25</td><td class=""><div class="pc"><div class="bar slim"><span style="width:76%"></span></div><b>76%</b></div></td><td class="num">0</td><td class="num">52/82</td><td class="num">63%</td></tr><tr><td class="">Fort Lauderdale</td><td class="num">15/26</td><td class=""><div class="pc"><div class="bar slim"><span style="width:58%"></span></div><b>58%</b></div></td><td class="num">2</td><td class="num">81/117</td><td class="num">69%</td></tr><tr><td class="">San Antonio</td><td class="num">15/23</td><td class=""><div class="pc"><div class="bar slim"><span style="width:65%"></span></div><b>65%</b></div></td><td class="num">0</td><td class="num">76/131</td><td class="num">58%</td></tr><tr><td class="">Dallas</td><td class="num">12/21</td><td class=""><div class="pc"><div class="bar slim"><span style="width:57%"></span></div><b>57%</b></div></td><td class="num"><span class="pill warn">15</span></td><td class="num">101/155</td><td class="num">65%</td></tr><tr><td class="">San Francisco</td><td class="num">11/23</td><td class=""><div class="pc"><div class="bar slim"><span style="width:48%"></span></div><b>48%</b></div></td><td class="num">0</td><td class="num">74/120</td><td class="num">62%</td></tr><tr><td class="">Portland</td><td class="num">7/7</td><td class=""><div class="pc"><div class="bar slim"><span style="width:100%"></span></div><b>100%</b></div></td><td class="num">1</td><td class="num">62/76</td><td class="num">82%</td></tr><tr><td class="">Orange County</td><td class="num">1/1</td><td class=""><div class="pc"><div class="bar slim"><span style="width:100%"></span></div><b>100%</b></div></td><td class="num">5</td><td class="num">90/157</td><td class="num">57%</td></tr></tbody><tfoot><tr><td class="">Oct 8 total</td><td class="num">192/285</td><td class="">67%</td><td class="num">25*</td><td class="num"></td><td class="num"></td></tr></tfoot></table></div>
+  <p class="note">* Pending total includes Seattle 2.</p>
+</div>
+<div class="grid" style="margin-top:16px">
+  <div class="card"><h3>No Oct 8 activity &mdash; month to date only</h3><div class="tw"><table><thead><tr><th class="">Location</th><th class="num">Month to date</th><th class="num">MTD %</th><th class="num">Pending</th></tr></thead><tbody><tr><td class="">Atlanta</td><td class="num">72/129</td><td class="num">56%</td><td class="num">0</td></tr><tr><td class="">Seattle</td><td class="num">37/45</td><td class="num">82%</td><td class="num">2</td></tr><tr><td class="">Austin</td><td class="num">28/36</td><td class="num">78%</td><td class="num">0</td></tr><tr><td class="">San Diego</td><td class="num">25/60</td><td class="num">42%</td><td class="num">0</td></tr></tbody></table></div></div>
+  <div class="card"><h3>No changeovers this month</h3><p class="note" style="font-size:14px;color:var(--ink)">Houston, New Jersey, Tampa, Toronto, Los Angeles, Vancouver</p><p class="note">These locations show 0/0 for the whole month in RouteMap.</p></div>
+</div>
+</section>
+
+<section><h2><span class="dot g"></span>Geotab Vehicle Start / End</h2>
+<div class="card"><div class="sub">Oct 8 only, local times (Oct 9 left out because the data is partial).</div><div class="tw"><table><thead><tr><th class="">Vehicle</th><th class="">Zone</th><th class="">Start</th><th class="">End</th><th class="num">Trips</th><th class="num">Miles</th></tr></thead><tbody><tr><td class="">1053 Sara Chicago</td><td class="">CT</td><td class="">9:09 AM</td><td class="">7:39 PM</td><td class="num">37</td><td class="num">77.0</td></tr><tr><td class="">1092 Soraya FTLA</td><td class="">ET</td><td class="">8:08 AM</td><td class="">8:57 AM</td><td class="num">5</td><td class="num">1.7</td></tr><tr><td class="">4303 Val</td><td class="">PT</td><td class="">8:43 AM</td><td class="">6:54 PM</td><td class="num">28</td><td class="num">87.2</td></tr><tr><td class="">4313 JD <span class="ast" title="Time zone assumed">*</span></td><td class="">CT</td><td class="">8:41 AM</td><td class="">4:31 PM</td><td class="num">18</td><td class="num">129.4</td></tr><tr><td class="">4345 Tom New Jersey</td><td class="">ET</td><td class="">7:13 AM</td><td class="">6:35 PM</td><td class="num">20</td><td class="num">45.8</td></tr><tr><td class="">6343 JD FW <span class="ast" title="Time zone assumed">*</span></td><td class="">CT</td><td class="">9:17 AM</td><td class="">8:06 PM</td><td class="num">25</td><td class="num">46.7</td></tr><tr><td class="">6350 Yolanda</td><td class="">PT</td><td class="">9:05 AM</td><td class="">12:42 PM</td><td class="num">5</td><td class="num">78.1</td></tr><tr><td class="">6537 Phoenix Van Active</td><td class="">MST</td><td class="">10:18 AM</td><td class="">3:21 PM</td><td class="num">15</td><td class="num">117.4</td></tr><tr><td class="">7606 Irving</td><td class="">PT</td><td class="">7:08 AM</td><td class="">2:44 PM</td><td class="num">19</td><td class="num">47.5</td></tr></tbody><tfoot><tr><td class="">Total (9 vehicles)</td><td class=""></td><td class=""></td><td class=""></td><td class="num">172</td><td class="num">630.8</td></tr></tfoot></table></div>
+<ul class="notes"><li>6293 Gabby: no trips on Oct 8.</li><li>Time zone for 4313 JD and 6343 JD FW is assumed to be Central and still needs confirmation.</li><li>1092 Soraya FTLA was only out for about 50 minutes (1.7 mi).</li></ul></div>
+</section>
+
+<footer>
+  <p><b>Auto-updated weekdays from FI Ops Manager.</b> Snapshot data: <a href="data/latest.json">data/latest.json</a>.</p>
+  <p>Salesforce window: calendar day Oct 8, 2026, Eastern time. The 7 AM-to-7 AM digest showed 12 Closed Won, including 1 more Fort Lauderdale unit starting Oct 9. Units on hire taken from the Oct 8 Salesforce bot digest, not re-pulled live.</p>
+  <p>Geotab: Oct 8 only, local times; Oct 9 left out because the data is partial.</p>
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,393 @@
+{
+  "asOf": "2026-10-08",
+  "asOfLabel": "Oct 8, 2026",
+  "generatedAt": "2026-10-10T07:35:47-04:00",
+  "window": "Calendar day Oct 8, 2026, Eastern time",
+  "atAGlance": {
+    "closedWon": 11,
+    "trials": 17,
+    "collectCancel": 4,
+    "closedLost": 4,
+    "pending": 0,
+    "closedNo": 0,
+    "routeMap": {
+      "done": 192,
+      "total": 285,
+      "pct": 67,
+      "locations": 11,
+      "pending": 25,
+      "mtdDone": 1089,
+      "mtdTotal": 1762,
+      "mtdPct": 62
+    },
+    "geotab": {
+      "vehicles": 9,
+      "trips": 172,
+      "miles": 630.8
+    },
+    "unitsOnHire": {
+      "total": 7978,
+      "locations": 21
+    }
+  },
+  "salesforce": {
+    "closedWon": {
+      "total": 11,
+      "byLocation": [
+        {
+          "location": "Fort Lauderdale FI",
+          "units": 6
+        },
+        {
+          "location": "Atlanta FI",
+          "units": 4
+        },
+        {
+          "location": "Dallas FI",
+          "units": 1
+        }
+      ],
+      "note": "The 7 AM-to-7 AM digest showed 12, including 1 more Fort Lauderdale unit starting Oct 9."
+    },
+    "trials": {
+      "total": 17,
+      "byLocation": [
+        {
+          "location": "Atlanta FI",
+          "count": 8
+        },
+        {
+          "location": "New York FI",
+          "count": 8
+        },
+        {
+          "location": "Sao Paulo FI",
+          "count": 1
+        }
+      ]
+    },
+    "pending": {
+      "total": 0,
+      "note": "3 Atlanta leads moved out of Pending 2/3 to Unqualified."
+    },
+    "closedNo": {
+      "total": 0
+    },
+    "collectCancel": {
+      "total": 4,
+      "byLocation": [
+        {
+          "location": "Dallas FI",
+          "count": 3,
+          "accounts": [
+            "James M Watson DDS, PA",
+            "Tupinamba",
+            "Amdocs, Inc"
+          ],
+          "note": "All within about 1 minute, ~11:06 AM ET"
+        },
+        {
+          "location": "San Antonio FI",
+          "count": 1,
+          "accounts": [
+            "Marcos Medical Care-"
+          ]
+        }
+      ]
+    },
+    "closedLost": {
+      "total": 4,
+      "byLocation": [
+        {
+          "location": "Phoenix FI",
+          "count": 2,
+          "from": "Collect/Cancel",
+          "accounts": [
+            "Anantuni Family Dental",
+            "Kokopelli"
+          ]
+        },
+        {
+          "location": "Fort Lauderdale FI",
+          "count": 1,
+          "from": "Collect/Cancel",
+          "accounts": [
+            "Global Wealth Manag..."
+          ]
+        },
+        {
+          "location": "San Antonio FI",
+          "count": 1,
+          "from": "Closed Won",
+          "accounts": [
+            "That Salon"
+          ]
+        }
+      ]
+    },
+    "unitsOnHire": {
+      "total": 7978,
+      "locations": 21,
+      "top": [
+        {
+          "location": "Toronto FI",
+          "units": 1135
+        },
+        {
+          "location": "Puget Sound FI",
+          "units": 627
+        },
+        {
+          "location": "Atlanta FI",
+          "units": 497
+        },
+        {
+          "location": "Orange County FI",
+          "units": 462
+        },
+        {
+          "location": "San Francisco FI",
+          "units": 462
+        }
+      ],
+      "smallest": [
+        {
+          "location": "Tampa FI",
+          "units": 121
+        },
+        {
+          "location": "San Antonio FI",
+          "units": 150
+        }
+      ],
+      "note": "Active products on Closed Won, point in time. Taken from the Oct 8 Salesforce bot digest, not re-pulled live."
+    }
+  },
+  "routeMap": {
+    "day": [
+      {
+        "location": "Chicago",
+        "done": 36,
+        "total": 52,
+        "pending": 0,
+        "mtdDone": 100,
+        "mtdTotal": 155
+      },
+      {
+        "location": "Fort Worth",
+        "done": 26,
+        "total": 35,
+        "pending": 0,
+        "mtdDone": 96,
+        "mtdTotal": 152
+      },
+      {
+        "location": "Denver",
+        "done": 26,
+        "total": 40,
+        "pending": 0,
+        "mtdDone": 137,
+        "mtdTotal": 216
+      },
+      {
+        "location": "New York",
+        "done": 24,
+        "total": 32,
+        "pending": 0,
+        "mtdDone": 58,
+        "mtdTotal": 131
+      },
+      {
+        "location": "Phoenix",
+        "done": 19,
+        "total": 25,
+        "pending": 0,
+        "mtdDone": 52,
+        "mtdTotal": 82
+      },
+      {
+        "location": "Fort Lauderdale",
+        "done": 15,
+        "total": 26,
+        "pending": 2,
+        "mtdDone": 81,
+        "mtdTotal": 117
+      },
+      {
+        "location": "San Antonio",
+        "done": 15,
+        "total": 23,
+        "pending": 0,
+        "mtdDone": 76,
+        "mtdTotal": 131
+      },
+      {
+        "location": "Dallas",
+        "done": 12,
+        "total": 21,
+        "pending": 15,
+        "mtdDone": 101,
+        "mtdTotal": 155
+      },
+      {
+        "location": "San Francisco",
+        "done": 11,
+        "total": 23,
+        "pending": 0,
+        "mtdDone": 74,
+        "mtdTotal": 120
+      },
+      {
+        "location": "Portland",
+        "done": 7,
+        "total": 7,
+        "pending": 1,
+        "mtdDone": 62,
+        "mtdTotal": 76
+      },
+      {
+        "location": "Orange County",
+        "done": 1,
+        "total": 1,
+        "pending": 5,
+        "mtdDone": 90,
+        "mtdTotal": 157
+      }
+    ],
+    "dayTotal": {
+      "done": 192,
+      "total": 285,
+      "pending": 25,
+      "note": "Pending total includes Seattle 2"
+    },
+    "mtdOnly": [
+      {
+        "location": "Atlanta",
+        "mtdDone": 72,
+        "mtdTotal": 129,
+        "pending": 0
+      },
+      {
+        "location": "Seattle",
+        "mtdDone": 37,
+        "mtdTotal": 45,
+        "pending": 2
+      },
+      {
+        "location": "Austin",
+        "mtdDone": 28,
+        "mtdTotal": 36,
+        "pending": 0
+      },
+      {
+        "location": "San Diego",
+        "mtdDone": 25,
+        "mtdTotal": 60,
+        "pending": 0
+      }
+    ],
+    "monthToDate": {
+      "done": 1089,
+      "total": 1762,
+      "pct": 62
+    },
+    "watch": "Dallas has 15 pending, the most of any location.",
+    "zeroMonth": [
+      "Houston",
+      "New Jersey",
+      "Tampa",
+      "Toronto",
+      "Los Angeles",
+      "Vancouver"
+    ]
+  },
+  "geotab": {
+    "note": "Oct 8 only, local times (Oct 9 left out because the data is partial).",
+    "vehicles": [
+      {
+        "vehicle": "1053 Sara Chicago",
+        "zone": "CT",
+        "start": "9:09 AM",
+        "end": "7:39 PM",
+        "trips": 37,
+        "miles": 77.0
+      },
+      {
+        "vehicle": "1092 Soraya FTLA",
+        "zone": "ET",
+        "start": "8:08 AM",
+        "end": "8:57 AM",
+        "trips": 5,
+        "miles": 1.7
+      },
+      {
+        "vehicle": "4303 Val",
+        "zone": "PT",
+        "start": "8:43 AM",
+        "end": "6:54 PM",
+        "trips": 28,
+        "miles": 87.2
+      },
+      {
+        "vehicle": "4313 JD",
+        "zone": "CT",
+        "zoneAssumed": true,
+        "start": "8:41 AM",
+        "end": "4:31 PM",
+        "trips": 18,
+        "miles": 129.4
+      },
+      {
+        "vehicle": "4345 Tom New Jersey",
+        "zone": "ET",
+        "start": "7:13 AM",
+        "end": "6:35 PM",
+        "trips": 20,
+        "miles": 45.8
+      },
+      {
+        "vehicle": "6343 JD FW",
+        "zone": "CT",
+        "zoneAssumed": true,
+        "start": "9:17 AM",
+        "end": "8:06 PM",
+        "trips": 25,
+        "miles": 46.7
+      },
+      {
+        "vehicle": "6350 Yolanda",
+        "zone": "PT",
+        "start": "9:05 AM",
+        "end": "12:42 PM",
+        "trips": 5,
+        "miles": 78.1
+      },
+      {
+        "vehicle": "6537 Phoenix Van Active",
+        "zone": "MST",
+        "start": "10:18 AM",
+        "end": "3:21 PM",
+        "trips": 15,
+        "miles": 117.4
+      },
+      {
+        "vehicle": "7606 Irving",
+        "zone": "PT",
+        "start": "7:08 AM",
+        "end": "2:44 PM",
+        "trips": 19,
+        "miles": 47.5
+      }
+    ],
+    "total": {
+      "vehicles": 9,
+      "trips": 172,
+      "miles": 630.8
+    },
+    "notes": [
+      "6293 Gabby: no trips on Oct 8.",
+      "Time zone for 4313 JD and 6343 JD FW is assumed to be Central and still needs confirmation.",
+      "1092 Soraya FTLA was only out for about 50 minutes (1.7 mi)."
+    ]
+  }
+}
